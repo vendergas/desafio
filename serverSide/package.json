@@ -1,0 +1,24 @@
+{
+  "name": "desafio_backend",
+  "version": "1.0.0",
+  "description": "Back-end do desafio para a vaga de desenvolvedor na VenderGás.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaovictor1516/desafio.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "backend"
+  ],
+  "author": "joaovictor1516",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaovictor1516/desafio/issues"
+  },
+  "homepage": "https://github.com/joaovictor1516/desafio#readme"
+}
