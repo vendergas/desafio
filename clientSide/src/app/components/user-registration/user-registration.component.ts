@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserRegistrationService } from '../services/use-registration/user-registration.service';
 
 @Component({
@@ -11,6 +11,10 @@ import { UserRegistrationService } from '../services/use-registration/user-regis
 })
 export class UserRegistrationComponent {
   creatUser: FormGroup;
+  submited: boolean = false;
+  success: boolean = false;
+  fail: boolean = false;
+
   constructor(private formBuilder: FormBuilder, private userRegistrationService: UserRegistrationService){
     this.creatUser = this.formBuilder.group({
       name: ["", Validators.required],
@@ -19,5 +23,24 @@ export class UserRegistrationComponent {
     });
   }
   
-  
+  get formControls(){
+    return this.creatUser.controls;
+  }
+
+  onSubmit(){
+    this.submited = true;
+
+    if(this.creatUser.invalid){
+      return ;
+    }
+
+    this.userRegistrationService.register(this.creatUser.value).subscribe({
+      next: response => {
+        this.success = true;
+      },
+      error: error => {
+        this.fail = true;
+      }
+    })
+  }
 }
