@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class UserRegistrationService {
 
   constructor(private http: HttpClient){}
 
-  register(userData: FormBuilder): Observable<FormBuilder>{
-    return this.http.post<FormBuilder>(this.apiUrl, userData);
+  register(userData: FormGroup): Observable<FormGroup>{
+    return this.http.post<FormGroup>(this.apiUrl, userData);
   }
 }
