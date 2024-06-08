@@ -11,7 +11,7 @@ import { UserRegistrationService } from '../services/use-registration/user-regis
 })
 export class UserRegistrationComponent {
   creatUser: FormGroup;
-  submited: boolean = false;
+  submitted: boolean = false;
   success: boolean = false;
   fail: boolean = false;
 
@@ -28,17 +28,19 @@ export class UserRegistrationComponent {
   }
 
   onSubmit(){
-    this.submited = true;
+    this.submitted = true;
 
     if(this.creatUser.invalid){
-      return ;
+      return;
     }
 
     this.userRegistrationService.register(this.creatUser.value).subscribe({
       next: response => {
+        console.log(`response: ${response}`);
         this.success = true;
       },
       error: error => {
+        console.log(`error: ${error}`);
         this.fail = true;
       }
     })
