@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductRegistrationAndManagementService {
-  private urlApi = "http://localhost:3000/products";
+  private urlApi = "http://localhost:3000/api/products";
   
   constructor(private http: HttpClient) { }
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClientRegistrationAndManagementService {
-  private urlApi = "http://localhost:3000/clienties";
+  private urlApi = "http://localhost:3000/api/clienties";
   
   constructor(private http: HttpClient) { }
 
