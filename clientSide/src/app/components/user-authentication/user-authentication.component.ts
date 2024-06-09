@@ -17,8 +17,8 @@ export class UserAuthenticationComponent {
 
   constructor(private formBuilder: FormBuilder, private userAuthenticationService: UserAuthenticationService){
     this.authenticationUser = this.formBuilder.group({
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required]]
+      email: ["", Validators.required],
+      password: ["", Validators.required]
     });
   }
 
