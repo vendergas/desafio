@@ -44,7 +44,7 @@
             </div>
     </div>
 
-    <button type="submit" class="">Criaar produto.</button>
+    <button type="submit" class="">Criar produto.</button>
 
     <div class="" *ngIf="success">
         <span>Produto cadastrado com sucesso!</span>
@@ -73,7 +73,7 @@
                 <th>{{ prooduct.description }}</th>
                 <th>{{ prooduct.company }}</th>
                 <th>
-                    <button (click)="onEdit()" class="">Editar</button>
+                    <button (click)="onEdit(product)" class="">Editar</button>
                     <button (click)="delet(product.id)" class="">Excluir</button>
                 </th>
             </tr>
