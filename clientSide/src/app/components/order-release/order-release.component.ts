@@ -25,6 +25,10 @@ export class OrderReleaseComponent {
     })
   }
 
+  get formControls(){
+    return this.order.controls;
+  }
+
   onSubmit(){
     this.submitted = true;
 
