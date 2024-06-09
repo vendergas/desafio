@@ -38,9 +38,11 @@ export class UserRegistrationComponent {
       next: response => {
         console.log(`response: ${response}`);
         this.success = true;
+        this.fail = false;
       },
       error: error => {
         console.log(`error: ${error}`);
+        this.success = false;
         this.fail = true;
       }
     })
