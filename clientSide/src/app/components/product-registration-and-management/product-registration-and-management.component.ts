@@ -11,7 +11,7 @@ import { ProductRegistrationAndManagementService } from '../services/product-reg
 })
 export class ProductRegistrationAndManagementComponent {
   product!: FormGroup;
-  products!: FormGroup;
+  products!: FormGroup[];
   submitted: boolean = false;
   success: boolean = false;
   fail: boolean = false;
