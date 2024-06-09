@@ -1,1 +1,70 @@
-<p>company-registration-and-management works!</p>
+<h1 class="">Registro e manutenção das empresas</h1>
+
+<form class="" 
+    (ngSubmit)="onSubmit()" 
+    [formGroup]="company">
+
+    <div class="">
+        <label for="companyFantasyName" class="">Nome do empresa:</label>
+        <input type="text" name="companyFantasyName" id="companyFantasyName" class="">
+            <div class="" *ngIf="submitted && formControls.fantasyName.errors">
+                <div class="" *ngIf="formControls.fantasyName.errors.required">
+                    <span>Digite o nome fantasia da empresa.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="companyCorporateReason" class="">Razão social da empresa:</label>
+        <input type="text" name="companyCorporateReason" id="companyCorporateReason" class="">
+            <div class="" *ngIf="submitted && formControls.corporateReason.errors">
+                <div class="" *ngIf="formControls.corporateReason.errors.required">
+                    <span>Digite a razão social da empresa.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="companyCnpj" class="">CNPJ da empresa:</label>
+        <input type="text" name="companyCnpj" id="companyCnpj" class="">
+            <div class="" *ngIf="submitted && formControls.cnpj.errors">
+                <div class="" *ngIf="formControls.cnpj.errors.required">
+                    <span>Digite o CNPJ da empresa.</span>
+                </div>
+            </div>
+    </div>
+
+    <button type="submit" class="">Criar empresa.</button>
+
+    <div class="" *ngIf="success">
+        <span>empresa cadastrado com sucesso!</span>
+    </div>
+
+    <div class="" *ngIf="fail">
+        <span>Falha ao cadastrar o empresa!</span>
+    </div>
+</form>
+
+<div class="">
+    <table class="">
+        <thead>
+          <tr>
+            <th>Nome fantasia</th>
+            <th>Razão social</th>
+            <th>CNPJ</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let company of companies">
+                <th>{{ company.fantasyName }}</th>
+                <th>{{ company.corporateReason }}</th>
+                <th>{{ company.cnpj}}</th>
+                <th>
+                    <button (click)="onEdit()" class="">Editar</button>
+                    <button (click)="delet(company.id)" class="">Excluir</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
