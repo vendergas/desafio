@@ -33,7 +33,7 @@ export class ProductRegistrationAndManagementComponent {
   }
 
   showProducts(){
-    this.productRegistrationAndManagementService.getAll().subscribe((data) => this.products = data);
+    this.productRegistrationAndManagementService.getAll().subscribe((data) => this.products = [data]);
   }
 
   onSubmit(){
