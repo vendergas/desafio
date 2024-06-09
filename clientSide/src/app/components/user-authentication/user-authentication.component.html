@@ -1,6 +1,8 @@
 <h1 class="">Login do usuario</h1>
 
-<form class="" (ngSubmit)="onSubmit()">
+<form class="" 
+    (ngSubmit)="onSubmit()" 
+    [formGroup]="authenticationUser">
     <div class="">
         <label for="userEmail" class="">Digite o seu e-mail:</label>
         <input type="email" name="userEmail" id="userEmail" class="" placeholder="exemplo@email.com">
