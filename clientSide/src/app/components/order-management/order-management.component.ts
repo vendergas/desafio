@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OrderManagementService } from '../services/order-management/order-management.service';
+import { OrderService } from '../services/order/order.service';
 
 @Component({
   selector: 'app-order-management',
@@ -11,17 +11,17 @@ import { OrderManagementService } from '../services/order-management/order-manag
 export class OrderManagementComponent {
  orders = [];
 
- constructor(private orderManagementService: OrderManagementService){}
+ constructor(private order: OrderService){}
 
  onInit(){
   this.showOrder();
  }
 
  showOrder(){
-  this.orderManagementService.getAll().subscribe((data) => this.orders = data);
+  this.order.getAll().subscribe((data) => this.orders = data);
  }
 
  delete(id: string){
-  this.orderManagementService.deleteOrder(id).subscribe(() => this.showOrder());
+  this.order.deleteOrder(id).subscribe(() => this.showOrder());
  }
 }
