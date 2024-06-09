@@ -18,8 +18,8 @@ export class UserRegistrationComponent {
   constructor(private formBuilder: FormBuilder, private userRegistrationService: UserRegistrationService){
     this.creatUser = this.formBuilder.group({
       name: ["", Validators.required],
-      email: ["", [Validators.email, Validators.required]],
-      password: ["", [Validators.min(8), Validators.required]]
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, Validators.pattern("^[A-Za-z\\d@$!%*?&]{8,}$")]]
     });
   }
   
