@@ -37,11 +37,11 @@
     <button type="submit" class="">Criar empresa.</button>
 
     <div class="" *ngIf="success">
-        <span>empresa cadastrado com sucesso!</span>
+        <span>Empresa cadastrada com sucesso!</span>
     </div>
 
     <div class="" *ngIf="fail">
-        <span>Falha ao cadastrar o empresa!</span>
+        <span>Falha ao cadastrar a empresa!</span>
     </div>
 </form>
 
@@ -61,7 +61,7 @@
                 <th>{{ company.corporateReason }}</th>
                 <th>{{ company.cnpj}}</th>
                 <th>
-                    <button (click)="onEdit()" class="">Editar</button>
+                    <button (click)="onEdit(company)" class="">Editar</button>
                     <button (click)="delet(company.id)" class="">Excluir</button>
                 </th>
             </tr>
