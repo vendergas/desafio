@@ -26,14 +26,14 @@ export class CompanyRegistrationAndManagementComponent {
   }
 
   ngOnInit(){
-    this.showcompanys();
+    this.showCompanies();
   }
 
   get formControls(){
     return this.company.controls;
   }
 
-  showcompanys(){
+  showCompanies(){
     this.companyRegistrationAndManagementService.getAll().subscribe((data) => this.companies = data);
   }
 
@@ -42,12 +42,12 @@ export class CompanyRegistrationAndManagementComponent {
 
     if(this.company.value.id){
       this.companyRegistrationAndManagementService.edit(this.company.value).subscribe(() => {
-        this.showcompanys();
+        this.showCompanies();
         this.resetForm();
       });
     } else{
       this.companyRegistrationAndManagementService.register(this.company).subscribe(() => {
-        this.showcompanys();
+        this.showCompanies();
         this.resetForm();
       });
     }
