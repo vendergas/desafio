@@ -61,7 +61,7 @@ export class CompanyRegistrationAndManagementComponent {
     this.companyRegistrationAndManagementService.edit(id);
   }
 
-  delet(id: string){
+  delete(id: string){
     this.companyRegistrationAndManagementService.deleteCompany(id);
   }
 
