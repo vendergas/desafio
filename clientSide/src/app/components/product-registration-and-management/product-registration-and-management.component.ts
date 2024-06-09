@@ -10,21 +10,23 @@ import { ProductRegistrationAndManagementService } from '../services/product-reg
   styleUrl: './product-registration-and-management.component.scss'
 })
 export class ProductRegistrationAndManagementComponent {
-  product!: FormGroup;
-  products!: FormGroup[];
+  product: FormGroup;
+  products = [];
   submitted: boolean = false;
   success: boolean = false;
   fail: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private productRegistrationAndManagementService: ProductRegistrationAndManagementService){}
-
-  ngOnInit(){
+  constructor(private formBuilder: FormBuilder, private productRegistrationAndManagementService: ProductRegistrationAndManagementService){
     this.product = this.formBuilder.group({
+      id: [null],
       name: ["", Validators.required],
       value: ["", Validators.required],
       description: ["", Validators.required],
       company: ["", Validators.required]
     });
+  }
+
+  ngOnInit(){
     this.showProducts();
   }
 
@@ -33,22 +35,38 @@ export class ProductRegistrationAndManagementComponent {
   }
 
   showProducts(){
-    this.productRegistrationAndManagementService.getAll().subscribe((data) => this.products = [data]);
+    this.productRegistrationAndManagementService.getAll().subscribe((data) => this.products = data);
   }
 
   onSubmit(){
     this.submitted = true;
 
-    this.productRegistrationAndManagementService.register(this.product).subscribe({
-      next: response => {
-        console.log(`response: ${response}`);
-        this.success = true;
-      },
+    if(this.product.value.id){
+      this.productRegistrationAndManagementService.edit(this.product.value).subscribe(() => {
+        this.showProducts();
+        this.resetForm();
+      });
+    } else{
+      this.productRegistrationAndManagementService.register(this.product).subscribe(() => {
+        this.showProducts();
+        this.resetForm();
+      });
+    }
+  }
 
-      error: error => {
-        console.log(`error: ${error}`);
-        this.fail = true;
-      }
-    });
+  onEdit(productForm: FormGroup){
+    this.product.setValue(productForm);
+  }
+
+  edit(id: string){
+    this.productRegistrationAndManagementService.edit(id);
+  }
+
+  delet(id: string){
+    this.productRegistrationAndManagementService.deleteProduct(id);
+  }
+
+  resetForm(){
+    this.product.reset({id: null, name: "", value: "", description: "", company: ""});
   }
 }
