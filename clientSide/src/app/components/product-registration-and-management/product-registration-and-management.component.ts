@@ -28,6 +28,10 @@ export class ProductRegistrationAndManagementComponent {
     this.showProducts();
   }
 
+  get formControls(){
+    return this.product.controls;
+  }
+
   showProducts(){
     this.productRegistrationAndManagementService.getAll().subscribe((data) => this.products = data);
   }
