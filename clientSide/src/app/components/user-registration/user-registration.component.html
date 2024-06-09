@@ -46,8 +46,8 @@
                 <div class="" *ngIf="formControls.errors.required">
                     <span>Digite a sua senha.</span>
                 </div>
-                <div class="" *ngIf="formControls.password.errors.min">
-                    <span>A senha dever ter no minimo 8 caracteres.</span>
+                <div class="" *ngIf="formControls.password.errors.pattern">
+                    <span>A senha dever ter no minimo 8 caracteres sendo elas maisculas, minusculas e caracteres especiais($!%*?&).</span>
                 </div>
             </div>
     </div>
@@ -60,11 +60,11 @@
                class="" 
                placeholder="********">
             <div class="" *ngIf="submitted && formControls.password.error">
-                <div class="" *ngIf="formControls.password.required">
+                <div class="" *ngIf="formControls.password.errors.required">
                     <span>Digite a sua senha.</span>
                 </div>
-                <div class="" *ngIf="formControls.password.min">
-                    <span>A senha dever ter no minimo 8 caracteres.</span>
+                <div class="" *ngIf="formControls.password.errors.pattern">
+                    <span>A senha dever ter no minimo 8 caracteres sendo elas maisculas, minusculas e caracteres especiais($!%*?&).</span>
                 </div>
             </div>
     </div>
