@@ -62,7 +62,7 @@ export class ClientRegistrationAndManagementComponent {
     this.clientRegistrationAndManagementService.edit(id);
   }
 
-  delet(id: string){
+  delete(id: string){
     this.clientRegistrationAndManagementService.deleteClient(id);
   }
 
