@@ -2,10 +2,34 @@
 
 <form class="" (ngSubmit)="onSubmit()">
     <div class="">
+        <label for="userEmail" class="">Digite o seu e-mail:</label>
         <input type="email" name="userEmail" id="userEmail" class="" placeholder="exemplo@email.com">
+            <div class="" *ngIf="submitted && formControls.email.errors">
+                <div class="" *ngIf="formControls.email.errors.required">
+                    <span>Digite o seu e-mail.</span>
+                </div>
+                <div class="" *ngIf="formControls.email.errors.email">
+                    <span>Email invalido</span>
+                </div>
+            </div>
     </div>
-    
+
     <div class="">
         <input type="password" name="userPassword" id="userPassword" class="" placeholder="********">
+            <div class="" *ngIf="submitted && formControls.password.errors">
+                <div class="" *ngIf="formControls.password.required">
+                    <span>Digite a sua senha</span>
+                </div>
+            </div>
+    </div>
+
+    <button type="submit" class=""></button>
+
+    <div class="" *ngIf="success">
+        <span>Login efetuado com sucesso.</span>
+    </div>
+
+    <div class="" *ngIf="fail">
+        <span>Falha ao efetuar o login.</span>
     </div>
 </form>

@@ -11,13 +11,14 @@ import { UserAuthenticationService } from '../services/user-authentication/user-
 })
 export class UserAuthenticationComponent {
   authenticationUser: FormGroup;
+  submitted: boolean = false;
   success: boolean = false;
   fail: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private userAuthenticationService: UserAuthenticationService){
     this.authenticationUser = this.formBuilder.group({
-      email: ["", Validators.required],
-      password: ["", [Validators.min(8), Validators.required]]
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required]]
     });
   }
 
@@ -26,6 +27,21 @@ export class UserAuthenticationComponent {
   }
 
   onSubmit(){
-    this.userAuthenticationService
+    const {email, password} = this.authenticationUser.value;
+    this.submitted = true;
+
+    this.userAuthenticationService.login(email, password).subscribe({
+      next: response => {
+        console.log(`Response: ${response}`);
+        this.success = true;
+        this.fail = false;
+      },
+
+      error: error => {
+        console.log(`Error: ${error}`);
+        this.success = false;
+        this.fail = true;
+      }
+    })
   }
 }
