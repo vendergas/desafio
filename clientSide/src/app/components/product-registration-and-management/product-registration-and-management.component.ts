@@ -62,7 +62,7 @@ export class ProductRegistrationAndManagementComponent {
     this.productRegistrationAndManagementService.edit(id);
   }
 
-  delet(id: string){
+  delete(id: string){
     this.productRegistrationAndManagementService.deleteProduct(id);
   }
 
