@@ -1,5 +1,15 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "rxjs": "^6.6.7"
+=======
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.10.0",
+    "sequelize": "^6.37.3"
+>>>>>>> 0333256a61be75e7d5f6ea5deebcb6e08b010685
   }
 }
