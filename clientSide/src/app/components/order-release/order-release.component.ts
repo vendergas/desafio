@@ -17,11 +17,9 @@ export class OrderReleaseComponent {
 
   constructor(private formBuilder: FormBuilder, private orderService: OrderService){
     this.order = this.formBuilder.group({
-      orderNumber: ["", Validators.required],
       orderClientName: ["", Validators.required],
       orderCompanyName: ["", Validators.required],
-      orderDetails: ["", Validators.required],
-      orderDate: ["", Validators.required]
+      orderDetails: [""]
     })
   }
 
