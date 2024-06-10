@@ -1,16 +1,16 @@
 const companyModel = require("../models/company.model");
 
 exports.create = (req, res) => {
-    if(!res.body.fantasyName || !res.body.cnpj || !res.body.corporateReason){
+    if(!res.body.nomeFansia || !res.body.cnpj || !res.body.razaoSocial){
         return res.status(400).send({
             mensage: "Erro, falta de conteudo necessario."
         })
     }
 
     const company = {
-        fantasyName: req.body.fantasyName,
+        nomeFansia: req.body.nomeFansia,
         cnpj: req.body.cnpj,
-        corporateReason: req.body.corporateReason
+        razaoSocial: req.body.razaoSocial
     };
 
     companyModel.create(company)
