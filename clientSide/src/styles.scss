@@ -1,1 +1,416 @@
-/* You can add global styles to this file, and also import other style files */
+// Tela de Cadastro de Usuário
+.user-registration {
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+  
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  
+  // Tela de Autenticação de Usuário
+  .user-authentication {
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+  
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+  
+  // Tela de Cadastro e Gerenciamento de Empresas
+  .company-management {
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+  
+      input, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+  
+      .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .save-btn {
+        background-color: #007bff;
+        color: #fff;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+  
+      .delete-btn {
+        background-color: #dc3545;
+        color: #fff;
+  
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+  }
+  
+  // Tela de Cadastro e Gerenciamento de Produtos
+  .product-management {
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+  
+      input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+  
+      .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .save-btn {
+        background-color: #28a745;
+        color: #fff;
+  
+        &:hover {
+          background-color: #218838;
+        }
+      }
+  
+      .delete-btn {
+        background-color: #dc3545;
+        color: #fff;
+  
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+  }
+  
+  // Tela de Cadastro e Gerenciamento de Clientes
+  .client-management {
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+  
+      input, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+  
+      .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .save-btn {
+        background-color: #007bff;
+        color: #fff;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+  
+      .delete-btn {
+        background-color: #dc3545;
+        color: #fff;
+  
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+  }
+  
+  // Tela para Lançamento de Pedidos
+  .order-creation {
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+  
+      input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    }
+  
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #17a2b8;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #138496;
+      }
+    }
+  }
+  
+  // Tela para Gerenciamento dos Pedidos
+  .order-management {
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .order-list {
+      list-style: none;
+      padding: 0;
+  
+      .order-item {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        .order-details {
+          flex-grow: 1;
+        }
+  
+        .order-actions {
+          display: flex;
+          gap: 10px;
+  
+          .btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+  
+          .edit-btn {
+            background-color: #ffc107;
+            color: #fff;
+  
+            &:hover {
+              background-color: #e0a800;
+            }
+          }
+  
+          .delete-btn {
+            background-color: #dc3545;
+            color: #fff;
+  
+            &:hover {
+              background-color: #c82333;
+            }
+          }
+        }
+      }
+    }
+  }
+  
