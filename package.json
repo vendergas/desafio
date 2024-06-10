@@ -1,8 +1,11 @@
 {
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "rxjs": "^6.6.7"
 =======
+=======
+>>>>>>> e84432f9d12b737a1bc7f4ba10f32e52e378c6c8
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -10,6 +13,12 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.10.0",
     "sequelize": "^6.37.3"
+<<<<<<< HEAD
 >>>>>>> 0333256a61be75e7d5f6ea5deebcb6e08b010685
+=======
+=======
+    "rxjs": "^6.6.7"
+>>>>>>> e2b732a9f533cee94e3daf0de16090051b6da83e
+>>>>>>> e84432f9d12b737a1bc7f4ba10f32e52e378c6c8
   }
 }
