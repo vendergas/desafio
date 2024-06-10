@@ -1,15 +1,81 @@
-<form action="" class="">
-    <label for="userEmail">Digite o seu e-mail:</label>
-    <input type="email" name="useEmail" id="userEmail" class="" placeholder="exemplo@email.com" required>
+<h1 class="">Cadastro de usuario</h1>
 
-    <label for="userName" class="">Digite o seu nome completo:</label>
-    <input type="text" name="userName" id="userName" class="" placeholder="Fulano da Silva" required>
+<form class="" 
+    [formGroup]="creatUser" 
+    (ngSubmit)="onSubmit()">
+    
+    <div class="">
+        <label for="userName" class="">Digite o seu nome completo:</label>
+        <input type="text" 
+                name="userName" 
+                id="userName" 
+                class="" 
+                placeholder="Fulano da Silva">
+            <div class="" *ngIf="submitted && formControls.name.errors">
+                <div class="" *ngIf="formControls.name.errors.required">
+                    <span>Digite o seu nome completo.</span>
+                </div>
+            </div>
+    </div>
 
-    <label for="userPassword" class="">Digite a sua senha:</label>
-    <input type="password" name="userPassword" id="userPassword" class="" placeholder="********" min="8" required>
+    <div class="">
+        <label for="userEmail">Digite o seu e-mail:</label>
+        <input type="email" 
+               name="useEmail" 
+               id="userEmail" 
+               class="" 
+               placeholder="exemplo@email.com">
+            <div class="" *ngIf="submitted && formControls.email.errors">
+                <div class="" *ngIf="formControls.email.errors.required">
+                    <span>Digite o seu e-mail.</span>
+                </div>
+                <div class="" *ngIf="formControls.email.errors.email">
+                    <span>E-mail inválido.</span>
+                </div>
+            </div>
+    </div>
 
-    <label for="confirmUserPassword" class="">Confirme a sua senha:</label>
-    <input type="password" name="confirmUserPassword" id="confirmUserPassword" class="" placeholder="********" min="8" required>
+    <div class="">
+        <label for="userPassword" class="">Digite a sua senha:</label>
+        <input type="password" 
+               name="userPassword" 
+               id="userPassword" 
+               class="" 
+               placeholder="********">
+            <div class="" *ngIf="submitted && formControls.password.errors">
+                <div class="" *ngIf="formControls.errors.required">
+                    <span>Digite a sua senha.</span>
+                </div>
+                <div class="" *ngIf="formControls.password.errors.pattern">
+                    <span>A senha dever ter no minimo 8 caracteres sendo elas maisculas, minusculas e caracteres especiais($!%*?&).</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="confirmUserPassword" class="">Confirme a sua senha:</label>
+        <input type="password" 
+               name="confirmUserPassword" 
+               id="confirmUserPassword" 
+               class="" 
+               placeholder="********">
+            <div class="" *ngIf="submitted && formControls.password.error">
+                <div class="" *ngIf="formControls.password.errors.required">
+                    <span>Digite a sua senha.</span>
+                </div>
+                <div class="" *ngIf="formControls.password.errors.pattern">
+                    <span>A senha dever ter no minimo 8 caracteres sendo elas maisculas, minusculas e caracteres especiais($!%*?&).</span>
+                </div>
+            </div>
+    </div>
 
     <button type="submit" class="">Criar conta</button>
+
+    <div class="" *ngIf="success">
+        <span>Usuario cadastrado com sucesso!</span>
+    </div>
+
+    <div class="" *ngIf="fail">
+        <span>Falha ao cadastrar o usuario!</span>
+    </div>
 </form>

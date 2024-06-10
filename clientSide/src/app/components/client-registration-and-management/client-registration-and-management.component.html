@@ -1,0 +1,85 @@
+<h1 class="">Registro e manutenção dos clientes</h1>
+
+<form class="" 
+    (ngSubmit)="onSubmit()" 
+    [formGroup]="client">
+
+    <div class="">
+        <label for="clientName" class="">Nome do cliente:</label>
+        <input type="text" name="clientName" id="clientName" class="">
+            <div class="" *ngIf="submitted && formControls.name.errors">
+                <div class="" *ngIf="formControls.name.errors.required">
+                    <span>Digite o nome do cliente.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="clientValue" class="">Valor do produto:</label>
+        <input type="text" name="clientValue" id="clientValue" class="">
+            <div class="" *ngIf="submitted && formControls.value.errors">
+                <div class="" *ngIf="formControls.value.errors.required">
+                    <span>Digite o valor do produto.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="clientEmail" class="">E-mail do cliente:</label>
+        <input type="text" name="clientEmail" id="clientEmail" class="">
+            <div class="" *ngIf="submitted && formControls.email.errors">
+                <div class="" *ngIf="formControls.email.errors.required">
+                    <span>Digite o e-mail do cliente.</span>
+                </div>
+                <div class="" *ngIf="formControls.email.errors.email">
+                    <span>E-mail inválido.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="clientCompany" class="">Empresa:</label>
+        <input type="text" name="clientCompany" id="clientCompany" class="">
+            <div class="" *ngIf="submitted && formControls.company.errors">
+                <div class="" *ngIf="formControls.company.errors.required">
+                    <span>Digite o nome da empresa.</span>
+                </div>
+            </div>
+    </div>
+
+    <button type="submit" class="">Criar cliente.</button>
+
+    <div class="" *ngIf="success">
+        <span>Cliente cadastrado com sucesso!</span>
+    </div>
+
+    <div class="" *ngIf="fail">
+        <span>Falha ao cadastrar o cliente!</span>
+    </div>
+</form>
+
+<div class="">
+    <table class="">
+        <thead>
+          <tr>
+            <th>Nome do cliente</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Empresa</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let client of clienties">
+                <th>{{ client.name }}</th>
+                <th>{{ client.email }}</th>
+                <th>{{ client.telephone }}</th>
+                <th>{{ client.company }}</th>
+                <th>
+                    <button (click)="onEdit(client)" class="">Editar</button>
+                    <button (click)="delete(client.id)" class="">Excluir</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>

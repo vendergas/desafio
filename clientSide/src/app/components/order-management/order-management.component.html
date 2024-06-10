@@ -1,0 +1,27 @@
+<h1 class="">Gerenciamento dos pedidos</h1>
+
+<table class="">
+    <thead>
+        <tr>
+          <th>Número do pedido</th>
+          <th>Nome do cliente</th>
+          <th>Nome da empresa</th>
+          <th>Observação</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr *ngFor="let order of orders">
+              <th>{{ order.number }}</th>
+              <th>{{ order.clientName }}</th>
+              <th>{{ order.companyName}}</th>
+              <th>{{ order.datails }}</th>
+              <th>{{ order.date }}</th>
+              <th>
+                  <button (click)="onEdite(order)" class="">Editar</button>
+                  <button (click)="delete(order.id)" class="">Excluir</button>
+              </th>
+          </tr>
+      </tbody>
+</table>

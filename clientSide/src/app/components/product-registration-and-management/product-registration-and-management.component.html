@@ -1,0 +1,82 @@
+<h1 class="">Registro e manutencao dos produtos</h1>
+
+<form class="" 
+    (ngSubmit)="onSubmit()" 
+    [formGroup]="product">
+
+    <div class="">
+        <label for="productName" class="">Nome do produto:</label>
+        <input type="text" name="productName" id="productName" class="">
+            <div class="" *ngIf="submitted && formControls.name.errors">
+                <div class="" *ngIf="formControls.name.errors.required">
+                    <span>Digite o nome do produto.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="productValue" class="">Valor do produto:</label>
+        <input type="text" name="productValue" id="productValue" class="">
+            <div class="" *ngIf="submitted && formControls.value.errors">
+                <div class="" *ngIf="formControls.value.errors.required">
+                    <span>Digite o valor do produto.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="productDescription" class="">Descrição do produto:</label>
+        <input type="text" name="productDescription" id="productDescription" class="">
+            <div class="" *ngIf="submitted && formControls.description.errors">
+                <div class="" *ngIf="formControls.description.errors.required">
+                    <span>Digite a descrição do produto.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="productCompany" class="">Empresa:</label>
+        <input type="text" name="productCompany" id="productCompany" class="">
+            <div class="" *ngIf="submitted && formControls.company.errors">
+                <div class="" *ngIf="formControls.company.errors.required">
+                    <span>Digite o nome da empresa.</span>
+                </div>
+            </div>
+    </div>
+
+    <button type="submit" class="">Criar produto.</button>
+
+    <div class="" *ngIf="success">
+        <span>Produto cadastrado com sucesso!</span>
+    </div>
+
+    <div class="" *ngIf="fail">
+        <span>Falha ao cadastrar o produto!</span>
+    </div>
+</form>
+
+<div class="">
+    <table class="">
+        <thead>
+          <tr>
+            <th>Nome do produto</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+            <th>Empresa</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let product of products">
+                <th>{{ prooduct.name }}</th>
+                <th>{{ prooduct.value }}</th>
+                <th>{{ prooduct.description }}</th>
+                <th>{{ prooduct.company }}</th>
+                <th>
+                    <button (click)="onEdit(product)" class="">Editar</button>
+                    <button (click)="delete(product.id)" class="">Excluir</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>

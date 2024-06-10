@@ -1,0 +1,40 @@
+<h1 class="">Criação de pedidos</h1>
+
+<form class="" 
+    (ngSubmit)="onSubmit()" 
+    [formGroup]="order">
+    <div class="">
+        <label for="orderClientName" class="">Nome do cliente:</label>
+        <input type="text" name="orderClientName" id="orderClientName" class="">
+            <div class="" *ngIf="submitted && formControls.orderClientName.errors">
+                <div class="" *ngIf="formControls.orderClientName.errors.required">
+                    <span>Digite o nome do cliente.</span>
+                </div>
+            </div>      
+    </div>
+    
+    <div class="">
+        <label for="orderCompanyName" class="">Nome do empresa:</label>
+        <input type="text" name="orderCompanyName" id="orderCompanyName" class="">
+            <div class="" *ngIf="submitted && formControls.orderCompanyName.errors">
+                <div class="" *ngIf="formControls.orderCompanyName.errors.required">
+                    <span>Digite o nome da empresa.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="">
+        <label for="orderDetails" class="">Observações do pedido:</label>
+        <textarea name="orderDetails" id="orderDetails"></textarea>
+    </div>
+
+    <button type="submit">Gerar pedido</button>
+
+    <div class="" *ngIf="success">
+        <span>Pedido gerado com sucesso!</span>
+    </div>
+
+    <div class="" *ngIf="fail">
+        <span>Falha ao gerar o pedido</span>
+    </div>
+</form>
