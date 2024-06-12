@@ -33,7 +33,7 @@ export class UserAuthenticationComponent {
 
     this.userAuthenticationService.login(email, password).subscribe({
       next: response => {
-        this.router.navigate(["/api/product/"]);
+        this.router.navigate(["/api/product"]);
         console.log(`Response: ${response}`);
         this.success = true;
         this.fail = false;
