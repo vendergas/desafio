@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserAuthenticationService } from '../services/user-authentication/user-authentication.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class UserAuthenticationComponent {
   success: boolean = false;
   fail: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private userAuthenticationService: UserAuthenticationService){
+  constructor(private formBuilder: FormBuilder, private userAuthenticationService: UserAuthenticationService, private router: Router){
     this.authenticationUser = this.formBuilder.group({
       email: ["", Validators.required],
       password: ["", Validators.required]
@@ -32,6 +33,7 @@ export class UserAuthenticationComponent {
 
     this.userAuthenticationService.login(email, password).subscribe({
       next: response => {
+        this.router.navigate(["/api/product/"]);
         console.log(`Response: ${response}`);
         this.success = true;
         this.fail = false;
