@@ -1,6 +1,6 @@
 const orderModel = require("../models/order.model");
 
-module.exports = (req, res) => {
+exports.create = (req, res) => {
     if(!numero || !data || !cliente || !empresa){
         return res.status(400).send({
             mensage: "Erro por conta de falta de dados."
